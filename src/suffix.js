@@ -1,6 +1,7 @@
 var root = this
 // AMD / RequireJS
-if (define && typeof define !== 'undefined' && define.amd) {
+if (typeof define !== 'undefined' && define && define.amd) {
+// if (define && typeof define !== 'undefined' && define.amd) {
     define([], function () {
         return sqlParser;
     });

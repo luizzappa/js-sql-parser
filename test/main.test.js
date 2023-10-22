@@ -451,4 +451,16 @@ describe('select grammar support', function () {
     and (FLOW_RX_BPS_RATE <= -0.2 and FLOW_TX_BPS_RATE <= -0.2)
     `)
   })
+
+  it('Support unicode extended char (U+0080..U+FFFF) as column name or alias', function() {
+    testParser(`select 
+      país, 
+      MAX(produção) as maior_produção, 
+      Ĉapelo,
+      Δάσος,
+      Молоко,
+      سلام,
+      かわいい
+    from table`)
+  })
 });
